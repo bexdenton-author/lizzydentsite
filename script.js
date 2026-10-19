@@ -23,3 +23,9 @@ if(menuBtn){
     menuBtn.textContent=open?'Close':'Menu';
   });
 }
+// Email links: the address is assembled here so it never appears whole in the page source
+document.querySelectorAll('[data-user][data-domain]').forEach(function(a){
+  var e=a.getAttribute('data-user')+'@'+a.getAttribute('data-domain');
+  a.href='mailto:'+e;
+  a.textContent=e;
+});
